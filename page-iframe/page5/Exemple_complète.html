@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <title>Exemple 3</title>
+    <style type="text/css">
+        [draggable=true] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+   user-select: none;
+  cursor:move;
+}
+[draggable=false] {
+  cursor:no-drop;
+}
+  p[draggable] {
+  display:inline-block;
+  vertical-align:top;
+  height:55px;
+  background:#A9C832;
+  padding:10px;
+  margin:0;
+  color:white;
+  min-width:55px;
+}
+.wrap 
+{
+  position: relative;
+    left: 150px;
+    top: 60px;
+    width: 100%;
+}
+#drop {
+  height: 200px;
+  width: 70%;
+  border: 3px dashed #bbb;
+  padding: 1em;
+  margin-bottom:1em;
+}
+#drop:hover {
+  background:#e0e6e9;
+}
+.deposezmoi {
+  background:#b5e766;
+  border: 3px dashed #79a633;
+}
+      body
+        {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+        
+        h1
+        {
+            text-align: center;
+            color: red;
+            position: relative;
+            top:2px;
+        }
+        
+        h3
+        {
+            text-align: center;
+            color: red;
+            font-family:fantasy serif;
+            position: relative;
+            top: 70px;
+        }
+        
+        i
+        {
+            font-size: 25px;
+            color: black
+        }
+       
+    </style>
+    <script type="text/javascript">
+        
+        function afficher(){
+            alert("Hellow Chail");
+        }
+     // Identifiant de l’élément de réception
+     var dropzone = document.getElementById('drop');
+    // Fonction entrée survol de la cible
+     function entree(event) {
+     event.target.className = 'deposezmoi';
+     event.preventDefault();
+     }
+    // Fonction sortie survol de la cible
+    function sortie(event) {
+    event.target.className = '';
+    }
+    // Fonction d’annulation du comportement par défaut
+    function survol(event) {
+        event.dataTransfer.dropEffect = "copy";
+    event.preventDefault();
+    return false;
+    }
+   //traitement de déplaçement
+   function deplace(event){
+   event.dataTransfer.effectAllowed="all";
+  var attribut_src = event.target.getAttribute("src");
+  if(attribut_src!=null) {
+    event.dataTransfer.setData("text/html",'<img src="'+attribut_src+'">');
+    } else {
+    event.dataTransfer.setData("text/plain",event.target.innerText||event.target.textContent);
+    }
+   }
+    // Traitement du dépôt
+   function depot(event) {
+         event.preventDefault();
+        if(event.dataTransfer) {
+       var html = event.dataTransfer.getData("text/html");
+    var texte = event.dataTransfer.getData("text/plain");
+    if(html) event.target.innerHTML += html+" ";
+    else event.target.innerHTML += texte+" ";
+    event.target.className = '';
+     }  
+   }
+   // Suppression de l'élément ayant suscité l'événement
+   function supprime(event) {
+   event.target.parentNode.removeChild(event.target);
+   }
+    </script>
+</head>
+<body>
+    <h1>Example Final</h1>
+     <div class="wrap">
+  <p style="color:red;font-size:25px;"><strong>Glisser...</strong></p>
+ <img src="Images/flower.gif" alt="" draggable="true" ondragstart="deplace(event)" ondragend="supprime(event)">
+  <img src="Images/music.gif" alt="" draggable="true" ondragstart="deplace(event)" ondragend="supprime(event)">
+  <img src="Images/rocket.gif" alt="" ondragstart="deplace(event)" ondragend="supprime(event)">
+  <p draggable="true" ondragstart="deplace(event)" ondragend="supprime(event)">Texte</p>
+  <p style="color:red;font-size:25px;"><strong>Déposer...</strong></p>
+  <div id="drop" ondragenter="entree(event)" ondragleave="sortie(event)" ondragover="survol(event)" ondrop="depot(event)"></div>
+</div>
+    
+    <h3>I hope that you have enjoyed With this Tutorial 
+    <i class="fa fa-smile-o"></i></h3>
+    
+</body>
+</html>

@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <title> Gliser & Disposer </title>
+      <meta charset="utf-8" />
+  </head>
+   
+    <style type="text/css">
+        body
+        {
+            background-color: white;
+        }
+        .main1 , .main2
+        {
+            width: 60%;
+            position: relative;
+            left: 250px;
+            top: 50px;
+        }
+      h2
+      {
+        color: salmon;  
+        font-family: Arial serif;
+      }
+        h3
+        {color: chocolate;  
+        font-family: Arial serif;}
+        h4
+        {
+            color: red;
+        }
+        span
+        {
+            color: darkorange;
+        }
+      p
+        {
+            color: grey;
+            letter-spacing: 0.1em;
+            line-height: 2em;
+        }
+      
+         .content
+        {
+            width: 50px;
+            height: 100px;
+            border-color: chocolate;
+            background-color: chocolate;
+            position: relative;
+            float: right;
+            right: 150px;
+            top: 0;
+        }
+        
+        body
+        {padding: 0;margin: 0}
+        
+    </style>
+    
+  <body>
+        <div class="content"></div>
+   <div class="main1"> 
+      <h2> Événements et attributs mis en œuvre </h2>
+<h3> Les événements dragenter et dragleave </h3>
+
+    <p>
+Durant un drag & drop, l’événement dragenter est déclenché à l’arrivée sur la cible tandis que dragleave est déclenché à la sortie.
+    </p>
+<h4>Example</h4><br/>
+      <h3> L’événements dragover </h3> 
+      <p>
+       C’est l’événement qui se déclenche lorsqu'un élément en cours de déplacement se déplace dans la zone de drop.
+       </p>
+      <h4>Exemple</h4>
+       <h2>Les événements dragstart , drop et dragend</h2>
+    <h3>L’interdace dataTransfer : </h3>
+      <p class="content2">
+        Cet objet permet de définir et de récupérer les informations relatives au déplacement en cours d'exécution.
+Propriétés: effectAllowed, dropEffect.
+Méthodes: setData()  , getData() 
+      </p>
+    </div>
+      
+  </body>
+</html>

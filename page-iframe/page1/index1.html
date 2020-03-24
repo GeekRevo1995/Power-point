@@ -1,0 +1,113 @@
+<html>
+ <head>
+    <meta charset="utf-8" />
+     <title> Prsentation</title>
+     <!-- Feather Icons -->
+	<link rel="stylesheet" type="text/css" href="fonts/feather/style.css">
+    <link rel="stylesheet" type="text/css" href="css/component.css"/>
+	<!-- Component styles -->
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+    	<script src="js/modernizr.custom.js"></script>
+ </head>
+
+    <style type="text/css">
+        body
+        {
+            background-color:  rgb(255, 254, 254);
+        }
+      h1
+        {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size:30px;
+            position: relative;
+            line-height: 1.5em;
+            color: grey;
+           
+        }
+        #tag
+        {
+            color: red;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size:30px;
+            position: relative;
+          
+        }
+        h2
+        {
+               font-size: 35px;
+                text-align: center;
+                bottom: 20px;
+                position: relative;
+        }
+        .lign1
+        {
+            width: 20%;
+            left: 150px;
+            height: 2px;
+            background-color: #999;
+            top:30px;
+            position: relative;
+        }
+
+         .lign2
+        {  
+            width: 20%;
+            left: 68.5%;
+            height: 2px;
+            background-color: #999;
+            top:30px;
+            position: relative;
+        }
+
+    </style>
+    
+ <body>
+    <div class="main">
+     <h1> Drag And Drop  <br/>
+     <span id="tag"> WITH </span> <br/>
+         HTML5 ADN JAVASCRIPT
+     </h1>
+       <div class="lign1"></div>
+       <div class="lign2"></div>
+      <h2> Realise Par :</h2>
+     
+     <!-- Grid -->
+		<section class="slider">
+			<div class="slide slide--current" data-content="content-1">
+				<div class="slide__mover">
+					<div class="zoomer flex-center">
+						<img class="zoomer__image" src="images/me.jpg" />
+					</div>
+				</div>
+				<h2 class="slide__title"><span> Adam Ramdane</span> Designer & Developper </h2>
+			</div>
+			<div class="slide" data-content="content-2">
+				<div class="slide__mover">
+					<div class="zoomer flex-center">
+						<img class="zoomer__image" src="images/me2.jpg" />
+					</div>
+				</div>
+				<h2 class="slide__title"><span>Rachid Sakara</span> Designer & Developper </h2>
+			</div>
+			
+			<nav class="slider__nav">
+				<button class="button button--nav-prev"><i class="icon icon--arrow-left"></i><span class="text-hidden">Previous product</span></button>
+     		<button class="button button--zoom"><i class="icon icon--zoom" style="display:none"></i><span class="text-hidden">View details</span></button> 
+				<button class="button button--nav-next"><i class="icon icon--arrow-right"></i><span class="text-hidden">Next product</span></button>
+			</nav>
+		</section>
+		<!-- /slider --> 
+		<section class="content">
+			<button class="button button--close"><i class="icon icon--circle-cross"></i><span class="text-hidden">Close content</span></button>
+		</section> 
+     </div>
+	<script src="js/classie.js"></script>
+	<script src="js/dynamics.min.js"></script>
+	<script src="js/main.js"></script>
+     
+ </body>
+</html>
